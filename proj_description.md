@@ -1,0 +1,1 @@
+This project is about OOP Practice in Python. Just simply imitating an IT Company structure.
