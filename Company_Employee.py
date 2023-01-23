@@ -8,7 +8,7 @@ class Company_Employee:
         self.b_day = b_day
         self.salary = salary
         self.vacation_days = vacation_days
-        #Temp
+        #Temp push
 
     #getter for all properties?
     def get_name(self):
