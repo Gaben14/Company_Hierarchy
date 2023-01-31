@@ -1,16 +1,27 @@
-# This is a sample Python script.
+def welcome():
+    print(f'Welcome to the Company Hierarchy application! \nPlease select from the menu below: ')
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    menu = {
+        1 : "Login",
+        2 : "Contact HR",
+        3 : "Apply for a Job"
+    }
 
+    for i in range(1,len(menu) + 1):
+        print(f"{i}. {menu[i]}")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    #Inside the input validate if the entered value is bigger/smaller than the length of menu.
+    while(True):
+        try:
+            usr_input = int(input("Please enter which menu you would like to use: "))
 
+            if(usr_input < 1 or usr_input > len(menu)):
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid input! Please enter a correct menu number!")
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    welcome()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
