@@ -1,24 +1,27 @@
 def welcome():
-    print(f'Welcome to the Company Hierarchy application! \nPlease select from the menu below: ')
+    print(f'Welcome to the Company Hierarchy application!')
+    # print("Please select from the menu below: ")
 
+
+def login():
     menu = {
-        1 : "Login",
-        2 : "Contact HR",
-        3 : "Apply for a Job"
+        1: "Login",
+        2: "Contact HR",
+        3: "Apply for a Job"
     }
 
     usr_accounts = {
-        "boss" : "pass_boss",
-        "team_lead" : "team_lead",
-        "hr" : "pass_hr",
-        "employee" : "pass_emp",
+        "boss": "pass_boss",
+        "team_lead": "team_lead",
+        "hr": "pass_hr",
+        "employee": "pass_emp",
         "intern": "pass_intern",
 
     }
-    for i in range(1,len(menu) + 1):
+    for i in range(1, len(menu) + 1):
         print(f"{i}. {menu[i]}")
-        #login_validation(menu, usr_accounts)
-def login_validation(menu, usr_accounts):
+
+
     #Inside the input validate if the entered value is bigger/smaller than the length of menu.
     while(True):
         try:

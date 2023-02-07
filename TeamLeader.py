@@ -10,3 +10,7 @@ class TeamLeader(Manager, Employee):
 
     def fire_people(cls):
         pass
+
+    def one_on_one(self):
+    #Attend 1:1 meetings with the team
+        pass
