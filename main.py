@@ -1,52 +1,45 @@
 def welcome():
     print(f'Welcome to the Company Hierarchy application!')
-    # print("Please select from the menu below: ")
-
 
 def login():
-    menu = {
-        1: "Login",
-        2: "Contact HR",
-        3: "Apply for a Job"
-    }
-
     usr_accounts = {
         "boss": "pass_boss",
         "team_lead": "team_lead",
-        "hr": "pass_hr",
+        "hr_user": "pass_hr",
         "employee": "pass_emp",
         "intern": "pass_intern",
 
     }
-    for i in range(1, len(menu) + 1):
-        print(f"{i}. {menu[i]}")
-
 
     #Inside the input validate if the entered value is bigger/smaller than the length of menu.
     while(True):
         try:
-            usr_input = int(input("Please enter which menu you would like to use: "))
+            usr_name = input("Please enter your username: ")
 
-            if(usr_input < 1 or usr_input > len(menu)):
-                raise ValueError
-
-            if usr_input == 1:
-                usr_name = input("Please enter your username: ")
-
-                if usr_name not in usr_accounts:
-                    print("Invalid username!")
+            if usr_name not in usr_accounts:
+                print("Invalid username!")
+            else:
+                usr_pass = input("Please enter your password: ")
+                if usr_pass != usr_accounts[usr_name]:
+                    print("Invalid password!")
                 else:
-                    usr_pass = input("Please enter your password: ")
-                    if usr_pass != usr_accounts[usr_name]:
-                        print("Invalid password!")
-                    else:
-                        print("Successful login!")
-                        break
+                    print("Successful login!")
+                    '''
+                    If login is successful create that specific instance that the user logged in
+                    Boss User - Instance of Boss class
+                    TeamLead - Instance of Team Lead class
+                    Hr_User - Instance of HR Class
+                    Employee - Instance of Employee Class
+                    Intern - Instance of the Intern Class
+                    After that print out the specific instance methods
+                    '''
+                    break
 
         except ValueError:
             print("Invalid input! Please enter a correct menu number!")
 
 if __name__ == '__main__':
     welcome()
+    login()
 
 

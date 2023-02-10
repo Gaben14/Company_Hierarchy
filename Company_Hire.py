@@ -2,14 +2,16 @@ class Company_Hire:
     all_hires = []
 
     #constructor:
-    def __init__(self, name: str, phone_number: int, email_address: str, start_date: str, b_day: str, salary: float, vacation_days: int):
-        self.name = name
-        self.phone_number = phone_number
-        self.email_address = email_address
-        self.start_date = start_date
-        self.b_day = b_day
-        self.salary = salary
-        self.vacation_days = vacation_days
+    def __init__(self, name: str, phone_number: int, email_address: str, start_date: str, b_day: str, salary: float):
+        self.__name = name
+        self.__phone_number = phone_number
+        self.__email_address = email_address
+        self.__start_date = start_date
+        self.__b_day = b_day
+        self.__salary = salary
+        self.__vacation_days = 20
+        #Base Vacation days will be 20, this can be higher based on age.
+        #If age is between 21-30 +1days, 31-40 +2days, 41-50 +3days, 51-60 +4days, 61-70, +5days
 
 
     #getter for all properties?
@@ -31,7 +33,7 @@ class Company_Hire:
     def get_vacation_days(self):
         return self.vacation_days
 
-    #Setters where?
+    #Setters where? Inside the main class for those attributes which we need to use.
 
     #Methods
     def take_vacation(self):
