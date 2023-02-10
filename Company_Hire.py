@@ -58,15 +58,13 @@ class Company_Hire:
         pass
 
     def attend_meeting(self):
-        #Attend meetings
-        pass
+        return "Attending a meeting, I will be available in 1 hours"
 
     def lead_meeting(self):
-        #Lead meetings
-        pass
+        return f"Hello everyone, my name is {self.get_name()}, I will be leading today's meeting!"
 
     def book_work_hours(self):
-        #Book work hours into an object for each day
+        #Book work hours into an object for each day for each instance
         '''Example:
         {"Monday": 8,
          "Tuesday": 4,

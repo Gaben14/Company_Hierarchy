@@ -12,4 +12,4 @@ class Manager(Company_Hire):
         return self.salary
 
     def attend_hire_interview(self):
-        pass
+        return "Attending a new hire interview, will be available in 1-2 hours."
