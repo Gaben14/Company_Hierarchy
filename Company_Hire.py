@@ -78,3 +78,6 @@ class Company_Hire:
          }
         '''
         pass
+
+    def login_message(self):
+        return f"Welcome {self.get_name} to the team. Your company e-mail address: {self.get_email_address}!"
