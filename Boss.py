@@ -2,6 +2,9 @@ from Manager import Manager
 
 
 class Boss(Manager):
+    #Constructor no special properties atm
+    def __init__(self, name, phone_number, email_address, start_date, b_day, salary):
+        super().__init__(name, phone_number, email_address, start_date, b_day, salary)
 
     def salary_increase(self):
         #Approve or decline salary increase request

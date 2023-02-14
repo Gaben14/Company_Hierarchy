@@ -15,23 +15,29 @@ class Company_Hire:
 
 
     #getter for all properties?
+    @property
     def get_name(self):
-        return self.name
+        return self.__name
 
+    @property
     def get_phone_number(self):
-        return self.phone_number
+        return self.__phone_number
 
+    @property
     def get_email_address(self):
-        return self.email_address
+        return self.__email_address
 
+    @property
     def get_start_date(self):
-        return self.start_date
+        return self.__start_date
 
+    @property
     def get_b_day(self):
-        return self.b_day
+        return self.__b_day
 
+    @property
     def get_vacation_days(self):
-        return self.vacation_days
+        return self.__vacation_days
 
     #Setters where? Inside the main class for those attributes which we need to use.
 

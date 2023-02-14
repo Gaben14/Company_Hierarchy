@@ -3,7 +3,7 @@ from Company_Hire import Company_Hire
 
 class Manager(Company_Hire):
 
-    # Only Team Leads and HR should be able to get the birtday of other hires?
+    # Only Team Leads and HR should be able to get the birthday of other hires?
     def get_b_day(self):
         return self.b_day
 

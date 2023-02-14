@@ -1,3 +1,7 @@
+from Boss import Boss
+from TeamLeader import TeamLeader
+
+
 def welcome():
     print(f'Welcome to the Company Hierarchy application!')
 
@@ -32,7 +36,16 @@ def login():
                     Employee - Instance of Employee Class
                     Intern - Instance of the Intern Class
                     After that print out the specific instance methods
+                    Use switch case?
                     '''
+                    match usr_name:
+                        case "boss":
+                            Boss_Acc = Boss("Jonathan Kent", 12345678, "boss@testcompany.com", "2000.02.01", "1970.02.12", 100.43)
+                            print(f"Welcome {Boss_Acc.get_name} !")
+                        case "team_lead":
+                            Team_Lead = TeamLeader("Random Team Lead", 98473421, "team_leader@testcompany.com", "2019.04.30", "1985.2.12", 49)
+                            print(f"Welcome {Team_Lead.get_name} - {Team_Lead.get_email_address} !")
+
                     break
 
         except ValueError:
