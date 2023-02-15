@@ -48,6 +48,7 @@ def login():
                             boss_acc = Boss("Jonathan Kent", 12345678, "boss@testcompany.com", "2000.02.01",
                                             1970, 100.43)
                             print(boss_acc.login_message())
+                            #print(boss_acc.get_vacation_days)
                         case "team_lead":
                             team_lead = TeamLeader("Random Team Lead", 98473421, "team_leader@testcompany.com",
                                                    "2019.04.30", 1985, 49)

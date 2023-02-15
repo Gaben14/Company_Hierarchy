@@ -12,9 +12,6 @@ class Company_Hire:
         self.__salary = salary
         self.__vacation_days = 20
 
-
-
-
     #getter for all properties?
     @property
     def get_name(self):
@@ -60,34 +57,48 @@ class Company_Hire:
         elif age > 61:
             extra_vac_days = 5
 
-        return self.__vacation_days + extra_vac_days
+        return f"You have {self.__vacation_days + extra_vac_days} vacation days left."
 
     #Setters where? Inside the main class for those attributes which we need to use.
+    def set_vacation_days(self, value):
+        self.__vacation_days = self.__vacation_days - value
 
     #Methods
     def take_vacation(self):
         #For now only reduce the fix vacation days with the taken out vacations
         #Interns should not have the same amount of vacation days as normal employees.
-        #1. The method should ask the user how many vacation days he/she wants to take out.
-        #2. Validate if this number is bigger than 0 and is an integer
-        #3. If the value is valid, substract it from the vacation_days variable
+        while(True):
+            try:
+                #1. The method should ask the user how many vacation days he/she wants to take out.
+                needed_vac_days = int(input("Please enter the number of vacation days you want to take off: "))
+                #2. Validate if this number is bigger than 0 and is an integer
+                if needed_vac_days < 1 or needed_vac_days > self.get_vacation_days:
+                    raise ValueError
+                else:
+                    break
+            except ValueError:
+                print(f"Invalid data! Please enter a number between 1 and {self.get_vacation_days}!")
+
+        #3. If the value is valid, substract it from the vacation_days variable - Use the setter for vacation days - Create it
+        self.set_vacation_days(needed_vac_days)
         #4. Return the successful response message and print out the remaining vacation days.
-        pass
+        return "Vacation request has been accepted and saved!"
 
     def work(self):
-        #Nothing special here, just ask the user what kind of work he/she will be doing today
-        #This will be different for each class (each work is a function call from that specific class)
-        '''
+        #Nothing special here, just ask the user what they want to do
+        """
+        Checking the remaining vacation, or submitting a vacation will be the same for everyone
+        Differences:
         For Hr: Search for Hires (search_hires(), organize interviews, attend interviews, send offer
         For Intern: code
         For IT_Employee: code, train other people, attend meetings, code review
         For Team Leader: one-on-one meetings, fire people, performance review, approve new hired
         For Boss: attend meetings, attend hire interview, approve/decline salary increase
-        '''
+        """
         pass
 
     def attend_meeting(self):
-        return "Attending a meeting, I will be available in 1 hours"
+        return "Attending a meeting, I will be available in 1 hour."
 
     def lead_meeting(self):
         return f"Hello everyone, my name is {self.get_name()}, I will be leading today's meeting!"
