@@ -1,17 +1,18 @@
+import datetime
 class Company_Hire:
     all_hires = []
 
     #constructor:
-    def __init__(self, name: str, phone_number: int, email_address: str, start_date: str, b_day: str, salary: float):
+    def __init__(self, name: str, phone_number: int, email_address: str, start_date: str, b_year: int, salary: float):
         self.__name = name
         self.__phone_number = phone_number
         self.__email_address = email_address
         self.__start_date = start_date
-        self.__b_day = b_day
+        self.__b_year = b_year
         self.__salary = salary
         self.__vacation_days = 20
-        #Base Vacation days will be 20, this can be higher based on age.
-        #If age is between 21-30 +1days, 31-40 +2days, 41-50 +3days, 51-60 +4days, 61-70, +5days
+
+
 
 
     #getter for all properties?
@@ -33,11 +34,33 @@ class Company_Hire:
 
     @property
     def get_b_day(self):
-        return self.__b_day
+        return self.__b_year
 
     @property
     def get_vacation_days(self):
-        return self.__vacation_days
+        """
+        Base Vacation days will be 20, this can be higher based on age.
+        Age should be calculated: Current Year - Birth Year
+        Need to refactor b_day to be a date variable, from which we can retrieve the year
+
+        If age is between 21-30 +1days, 31-40 +2days, 41-50 +3days, 51-60 +4days, 61+, +5days
+        """
+        extra_vac_days = 0
+        #Notes to self: create a function which checks if age <= 18 or age is negative.
+        age = datetime.datetime.now().year - self.__b_year
+
+        if 20 < age <= 30:
+            extra_vac_days = 1
+        elif 30 < age <= 40:
+            extra_vac_days = 2
+        elif 40 < age <= 50:
+            extra_vac_days = 3
+        elif 50 < age <= 60:
+            extra_vac_days = 4
+        elif age > 61:
+            extra_vac_days = 5
+
+        return self.__vacation_days + extra_vac_days
 
     #Setters where? Inside the main class for those attributes which we need to use.
 

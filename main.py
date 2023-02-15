@@ -46,20 +46,20 @@ def login():
                     match usr_name:
                         case "boss":
                             boss_acc = Boss("Jonathan Kent", 12345678, "boss@testcompany.com", "2000.02.01",
-                                            "1970.02.12", 100.43)
+                                            1970, 100.43)
                             print(boss_acc.login_message())
                         case "team_lead":
                             team_lead = TeamLeader("Random Team Lead", 98473421, "team_leader@testcompany.com",
-                                                   "2019.04.30", "1985.2.12", 49)
+                                                   "2019.04.30", 1985, 49)
                             print(team_lead.login_message())
                         case "hr_user":
-                            hr_user = HR("HR User1", 4568790, "hr_user@testcompany.com", "2017.01.10", "1995.05.22", 23)
+                            hr_user = HR("HR User1", 4568790, "hr_user@testcompany.com", "2017.01.10", 1995, 23)
                             print(hr_user.login_message())
                         case "employee":
-                            employee_user = Employee("Employee User", 78923123, "employee@testcompany.com", "2012.09.18", "1992.03.22", 89)
+                            employee_user = Employee("Employee User", 78923123, "employee@testcompany.com", "2012.09.18", 1992, 89)
                             print(employee_user.login_message())
                         case "intern":
-                            intern_user = Intern("Intern User", 14393212, "intern@testcompany.com", "2022.11.29", "2006.04.12", 10)
+                            intern_user = Intern("Intern User", 14393212, "intern@testcompany.com", "2022.11.29", 2002, 10)
                             print(intern_user.login_message())
                     break
 

@@ -3,8 +3,8 @@ from Manager import Manager
 
 
 class TeamLeader(Manager, Employee):
-    def __init__(self, name, phone_number, email_address, start_date, b_day, salary):
-        super().__init__(name, phone_number, email_address, start_date, b_day, salary)
+    def __init__(self, name, phone_number, email_address, start_date, b_year, salary):
+        super().__init__(name, phone_number, email_address, start_date, b_year, salary)
     def approve_new_hire(self):
         # Logic: Do you want to hire this employee {name}, yes or no?
         pass
